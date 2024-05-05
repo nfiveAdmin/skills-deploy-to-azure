@@ -7,12 +7,9 @@ on:
 
 env:
   IMAGE_REGISTRY_URL: ghcr.io
-  ###############################################
   ### Replace <username> with GitHub username ###
-  ###############################################
   DOCKER_IMAGE_NAME: nfiveAdmin-azure-ttt
   AZURE_WEBAPP_NAME: nfiveAdmin-ttt-app
-  ###############################################
 
 jobs:
   build:
@@ -27,7 +24,7 @@ jobs:
           node-version: 16
       - name: npm install and build webpack
         run: |
-          npm install
+          npm install --force
           npm run build
       - uses: actions/upload-artifact@v4
         with:
